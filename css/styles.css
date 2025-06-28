@@ -109,8 +109,7 @@ img {
   height: 24px;
 }
 
-.header-menu-item-link {
-  padding: 24px 0;
+.header-menu-item {
   font-weight: 500;
   font-size: 16px;
   /* line-height: 24px; */
@@ -119,9 +118,32 @@ img {
   color: #2e2f42;
 }
 
-.header-menu-item-link:hover,
-.header-menu-item-link:focus {
+.nav-menu-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 20px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-menu-link:hover,
+.nav-menu-link:focus {
   color: #404bbf;
+}
+
+.nav-menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: 2px;
+  height: 4px;
+  background-color: transparent;
+}
+
+.nav-menu-link:hover::after {
+  background-color: #404bbf;
 }
 
 .contacts .contacts-list {
