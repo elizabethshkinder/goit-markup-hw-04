@@ -9,6 +9,10 @@ a {
   color: currentColor;
 }
 
+p {
+  margin: 0;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
@@ -37,6 +41,7 @@ address {
 img {
   display: block;
 }
+
 .container {
   margin: 0 auto;
   padding: 0 15px;
@@ -348,6 +353,7 @@ img {
 }
 
 .team-card-content {
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -418,40 +424,6 @@ img {
   flex-direction: column;
 }
 
-.portfolio-list-item {
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.visual-wrapper {
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.visual-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #4d5ae5;
-  transform: translateY(100%);
-}
-
-.overlay-text {
-  padding: 40px 32px 0;
-  font-weight: 400;
-  font-size: 16px;
-  /* line-height: 24px; */
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #f4f4fd;
-}
-
-.portfolio-list-item:hover .visual-overlay {
-  transform: translateY(0%);
-}
-
 .portfolio-title {
   display: flex;
   justify-content: center;
@@ -480,11 +452,42 @@ img {
 }
 
 .portfolio-list-item {
-  width: 360px;
-  height: 420px;
   width: calc((100% - 48px) / 3);
-  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
-    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-list-item:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.visual-wrapper {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 300px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px 0;
+  background-color: #4d5ae5;
+  font-weight: 400;
+  font-size: 16px;
+  /* line-height: 24px; */
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-list-item:hover .overlay {
+  transform: translateY(0%);
 }
 
 .portfolio-list-item-content {
@@ -544,6 +547,7 @@ img {
   display: inline-block;
   width: 115px;
   height: 24px;
+  margin-bottom: 16px;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 18px;
