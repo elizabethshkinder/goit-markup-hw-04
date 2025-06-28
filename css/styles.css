@@ -581,7 +581,6 @@ img {
 
 .social-media-text {
   margin-bottom: 16px;
-  white-space: nowrap;
   font-weight: 500;
   font-size: 16px;
   /* line-height: 24px; */
@@ -589,10 +588,12 @@ img {
   letter-spacing: 0.02em;
   color: #fff;
 }
+
 .social-media-links {
   display: flex;
   flex-direction: row;
   gap: 16px;
+  margin-top: 0;
 }
 
 .social-link-item {
